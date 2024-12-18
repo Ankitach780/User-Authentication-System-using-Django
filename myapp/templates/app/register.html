@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignIN Form</title>
+    <link href="{% static '/css/style.css' %}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <center>
+    <div class="content">
+        <div class="text">
+            Login Form
+        </div>
+        <h3 style="color:red">{{msg}}</h3>
+        <form action="{% url 'regus' %}" method="POST" >
+        {% csrf_token %}
+        <div class="field">
+        <input type="email" class="form-control" id="Email" name="Email" placeholder="Email" autocomplete="off">
+        </div>
+        <div class="field">
+        <input type="password" class="form-control" id="password" name="password" placeholder="password" autocomplete="off">
+        </div>       
+        <div class="signup">
+        <button >SIGN-IN</button>
+        <p> Don't have an Account? <a href="{% url 'login' %}">Register Now!</a></p>
+        </div>
+        </form>
+    </div>
+    </center>
+</body>
+</html>

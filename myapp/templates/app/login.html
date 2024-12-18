@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login Page</title>
+    <link href="{% static '/css/style.css' %}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <center>
+    <div class="content">
+        <div class="text">SignUp Form</div>
+        <h3 style="color:rgb(190, 40, 26); font-size: 20px;">{{msg}}</h3>
+        <form action="{% url 'login' %}" method="POST" >
+            {% csrf_token %}
+            <div class="field">
+                <input type="text" class="form-control" id="firstname" name='firstname' placeholder="firstname" autocomplete="off">
+            </div>
+            <div class="field">
+            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="lastname" autocomplete="off">
+            </div>
+            <div class="field">
+            <input type="email" class="form-control" id="Email" name="Email" placeholder="Email" autocomplete="off">
+            </div>
+            <div class="field">
+            <input type="tel" class="form-control" id="contact" name="contact" placeholder="contact" autocomplete="off">
+            </div>
+            <div class="field">
+            <input type="password" class="form-control" id="password" name="password" placeholder="password" autocomplete="off">
+            </div>
+            <div class="field">
+            <input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="cpassword" autocomplete="off">
+            </div>         
+            <div class="signup">
+                <button>SignUp</button>
+        </form>
+    </div>
+    </center>
+</body>
+</html>

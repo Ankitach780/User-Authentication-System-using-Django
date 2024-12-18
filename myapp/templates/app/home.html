@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        .container{
+            padding: 20px;
+            background-image: url("{% static 'image.jpg' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: rgb(22, 8, 8);
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div class="container">
+            <h1>Your Home Page</h1>
+            <h3>First-Name :{{request.session.firstname}}</h3>
+            <h3>Last-Name :{{request.session.lastname}}</h3>
+            <h3>E-mail :{{request.session.Email}}</h3>
+            </div>
+    </center>
+</body>
+</html>
